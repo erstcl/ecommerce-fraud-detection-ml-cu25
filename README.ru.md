@@ -1,5 +1,7 @@
 [🇷🇺 Русская версия](README.ru.md) | [🇬🇧 English version](README.md)
 
+# E-Commerce Fraud Detection with SHAP Interpretability
+
 **Финальный проект курса**: Machine Learning (Central University)  
 **Timeline**: Ноябрь — Декабрь 2024
 
