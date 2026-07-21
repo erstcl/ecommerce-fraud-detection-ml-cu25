@@ -2,7 +2,9 @@
 
 # E-Commerce Fraud Detection with SHAP Interpretability
 
-**Final project**: Machine Learning Course (Central University)  
+[![Notebook quality](https://github.com/erstcl/ecommerce-fraud-detection-ml-cu25/actions/workflows/notebook-quality.yml/badge.svg)](https://github.com/erstcl/ecommerce-fraud-detection-ml-cu25/actions/workflows/notebook-quality.yml)
+
+**Applied ML project**: imbalanced classification and model interpretability
 **Timeline**: November — December 2024
 
 ***
@@ -54,7 +56,7 @@ Build a machine learning system to detect fraudulent e-commerce transactions bas
 
 ## Solution
 
-Project completed in 3 stages following university course roadmap:
+The modeling workflow is organized into three stages:
 
 ### Stage 1: EDA & Baseline
 
@@ -222,6 +224,21 @@ SHAP embeddings alone (without original features): ROC-AUC = 0.96381 (1.26pp low
 
 ***
 
+## Reproduce the analysis
+
+```bash
+git clone https://github.com/erstcl/ecommerce-fraud-detection-ml-cu25.git
+cd ecommerce-fraud-detection-ml-cu25
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+jupyter lab ml_project.ipynb
+```
+
+The notebook downloads the referenced dataset mirror. The committed notebook is
+also retained as an inspectable analytical record; CI verifies its JSON structure
+and rejects saved error outputs.
+
 ## Tech Stack
 
 ### ML Stack
@@ -261,12 +278,15 @@ SHAP embeddings alone (without original features): ROC-AUC = 0.96381 (1.26pp low
 
 ***
 
-## About the Project
+## Evaluation scope
 
-Project completed as final team assignment for "Machine Learning" course at Central University. Project structure follows 3-stage roadmap:
+The repository documents a three-stage applied ML study:
 
 1. **Checkpoint 1** (Nov 17-26): EDA + Baseline
 2. **Checkpoint 2** (Nov 24 — Dec 3): Anomaly Detection + Feature Engineering
 3. **Checkpoint 3** (Dec 1-10): SHAP Interpretability + Shapley Flow
 
-Team completed all checkpoints, applying both classical statistical methods and SHAP embeddings with graph-based feature analysis.
+All headline metrics come from the saved stratified hold-out evaluation in the
+notebook. They are experimental results on the referenced public dataset, not online
+production performance. A temporal or out-of-time split would be the next validation
+step before deployment.

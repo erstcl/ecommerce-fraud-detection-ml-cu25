@@ -2,7 +2,9 @@
 
 # E-Commerce Fraud Detection with SHAP Interpretability
 
-**Финальный проект курса**: Machine Learning (Central University)  
+[![Notebook quality](https://github.com/erstcl/ecommerce-fraud-detection-ml-cu25/actions/workflows/notebook-quality.yml/badge.svg)](https://github.com/erstcl/ecommerce-fraud-detection-ml-cu25/actions/workflows/notebook-quality.yml)
+
+**Прикладной ML-проект**: классификация несбалансированных данных и интерпретация модели
 **Timeline**: Ноябрь — Декабрь 2024
 
 ---
@@ -54,7 +56,7 @@
 
 ## Решение
 
-Проект выполнен в 3 этапа согласно roadmap университетского курса:
+Работа организована в три этапа:
 
 ### Этап 1: EDA и Baseline
 
@@ -222,6 +224,21 @@ SHAP-эмбеддинги сами по себе (без исходных фич
 
 ---
 
+## Воспроизведение анализа
+
+```bash
+git clone https://github.com/erstcl/ecommerce-fraud-detection-ml-cu25.git
+cd ecommerce-fraud-detection-ml-cu25
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+jupyter lab ml_project.ipynb
+```
+
+Notebook скачивает используемое зеркало датасета. Сохранённая версия остаётся
+проверяемым аналитическим отчётом; CI валидирует JSON-структуру и не допускает
+закоммиченные error outputs.
+
 ## Технологии
 
 ### ML Stack
@@ -261,12 +278,15 @@ SHAP-эмбеддинги сами по себе (без исходных фич
 
 ---
 
-## О проекте
+## Границы оценки
 
-Проект выполнен в рамках курса "Machine Learning" Центрального университета как финальная командная работа. Структура проекта следует 3-этапной роадмапе:
+Репозиторий содержит трёхэтапное прикладное ML-исследование:
 
 1. **Checkpoint 1** (17-26 ноября): EDA + Baseline
 2. **Checkpoint 2** (24 ноября — 3 декабря): Anomaly Detection + Feature Engineering
 3. **Checkpoint 3** (1-10 декабря): SHAP Interpretability + Shapley Flow
 
-Команда прошла все чекпоинты, применив как и классические статистические методы, так и SHAP-эмбеддинги и graph-based анализ признаков.
+Все headline-метрики получены на сохранённом stratified hold-out из notebook. Это
+экспериментальные результаты на указанном публичном датасете, а не production
+performance. Перед внедрением потребовалась бы дополнительная out-of-time
+валидация.
